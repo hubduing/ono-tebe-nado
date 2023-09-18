@@ -10,10 +10,9 @@ body {
   font-size: 18px;
   justify-content: center;
   align-content: center;
-  margin: 92px auto;
+  margin: 94px auto;
 }
 .menu {
-  justify-self: center;
   align-self: center;
 }
 .links-list {
@@ -40,6 +39,10 @@ body {
   width: 148px;
   justify-self: center;
 }
+.header__logo img {
+  width: 100%;
+  height: 100%;
+}
 .contacts {
   display: flex;
   flex-direction: column;
@@ -49,13 +52,17 @@ body {
 }
 .contacts a {
   text-underline-position: under;
+  line-height: 24.3px;
+}
+.contacts p {
+  line-height: 24.3px;
 }
 
 .cover {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 50px;
+  padding: 0 50px 50px;
   max-width: 1440px;
   margin: 0 auto;
   color: var(--white);
@@ -68,26 +75,36 @@ body {
   max-width: 1340px;
 }
 .cover-container p {
+  display: block;
   font-weight: bold;
   font-size: 100px;
-  line-height: 1.15;
   letter-spacing: 0.3em;
+}
+.aligned-text span, .aligned-text_center span {
+  letter-spacing: 0.6em;
 }
 .aligned-text {
   margin-top: 165px;
   text-align: left;
+  margin-bottom: 22px;
+  line-height: 115%;
+}
+.cover-container p.aligned-text_right::first-letter {
+  letter-spacing: 0.6em;
 }
 .aligned-text_center {
   text-align: center;
+  line-height: 100%;
+  margin-bottom: 11px;
 }
 .aligned-text_right {
-  margin-bottom: 135px;
+  margin-bottom: 138px;
   text-align: right;
 }
-.show-more {
-  position: relative;
-  align-items: center;
+.aligned-text_right::first-letter {
+  letter-spacing: 0.6em;
 }
+
 .overlay {
   z-index: -1;
   position: absolute;
@@ -105,15 +122,20 @@ body {
   padding: 0;
   margin: 0;
 }
+.show-more {
+  position: relative;
+}
 .subline,
 .btn {
   font-size: 22px;
 }
 .subline {
+  margin-left: 40px;
   text-align: center;
   padding-bottom: 12px;
   line-height: 28px;
-  word-spacing: 26px;
+  word-spacing: 19px;
+  letter-spacing: 0;
 }
 .btn {
   position: absolute;
@@ -126,8 +148,8 @@ body {
   cursor: pointer;
   border-radius: 15px;
   background-color: #000000;
-  opacity: .7;
-  transition: opacity .35s ease
+  opacity: 0.7;
+  transition: opacity 0.35s ease;
 }
 .lots {
   margin: 0 auto;
@@ -140,6 +162,7 @@ body {
   font-weight: bold;
   margin-bottom: 27px;
   display: block;
+  text-transform: uppercase;
 }
 .lots__padding-left {
   padding-left: 40px;
@@ -172,6 +195,8 @@ body {
   font-size: 22px;
   font-weight: bold;
   text-decoration: underline;
+  text-transform: uppercase;
+  text-underline-position: under;
 }
 .lot p {
   font-size: 20px;
@@ -180,16 +205,18 @@ body {
 .lots__more {
   font-size: 20px;
   text-decoration: underline;
+  text-underline-position: under;
 }
 .about {
   max-width: 1340px;
-  margin: 180px auto;
+  margin: 0 auto 185px;
   display: flex;
   row-gap: 25px;
 }
 .logo-column {
   width: 430px;
   padding: 0 95px;
+  margin-right: 25px;
 }
 .about__logo-container {
   display: flex;
@@ -233,6 +260,11 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+.footer__link-list .header__link {
+  list-style: none;
+  margin-left: 0;
+  font-size: 18px;
 }
 .contacts-left {
   justify-self: start;
