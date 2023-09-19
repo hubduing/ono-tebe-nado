@@ -104,7 +104,9 @@ body {
 .aligned-text_right::first-letter {
   letter-spacing: 0.6em;
 }
-
+.no-letter {
+  letter-spacing: 0;
+}
 .overlay {
   z-index: -1;
   position: absolute;
