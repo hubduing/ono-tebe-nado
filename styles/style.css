@@ -1,11 +1,12 @@
-body {
+:root {
   --white: #ffffff;
-  font-style: "Raleway", sans-serif;
+}
+body {
+  font-family: "Raleway", "Arial", sans-serif;
   font-weight: normal;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow-x: hidden;
 }
 a {
   text-decoration: none;
@@ -35,6 +36,7 @@ a {
   text-decoration: none;
   margin-left: 0;
   padding-left: 0;
+  pointer-events: none;
 }
 .header__logo {
   display: block;
@@ -54,6 +56,7 @@ a {
 }
 .contacts {
   display: block;
+  font-style: normal;
   max-width: 240px;
   align-self: center;
   justify-self: flex-end;
@@ -62,7 +65,6 @@ a {
   text-underline-position: under;
   text-decoration: underline;
   line-height: 24.3px;
-  pointer-events: none;
 }
 .contacts p {
   line-height: 24.3px;
@@ -70,7 +72,7 @@ a {
 
 .cover {
   position: relative;
-  z-index: -1;
+  z-index: 0;
   display: flex;
   flex-direction: column;
   width: 100vw;
@@ -78,7 +80,6 @@ a {
   margin: 0 auto;
   color: var(--white);
   text-transform: uppercase;
-  overflow: hidden;
   padding: 0 50px 50px;
   background-image: url("../images/cover.jpg");
   background-repeat: no-repeat;
@@ -86,13 +87,14 @@ a {
   background-position: center center;
 }
 .cover-container {
+  z-index: 2;
   align-items: center;
   justify-content: center;
   max-width: 1340px;
 }
 .cover__title {
   margin-top: 165px;
-  margin-bottom: 147px;
+  margin-bottom: 135px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -130,7 +132,7 @@ a {
 }
 
 .overlay {
-  z-index: -2;
+  z-index: 1;
   position: absolute;
   top: 0;
   right: 0;
@@ -140,26 +142,21 @@ a {
 }
 
 .show-more {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 .subline,
 .btn {
   font-size: 22px;
-  pointer-events: none;
 }
 .subline {
-  z-index: 1;
-  grid-column: 3/11;
-  grid-row: 1/1;
   text-align: center;
   line-height: 28px;
   word-spacing: 19px;
-  padding-bottom: 12px;
-  padding-left: 40px;
+  margin-right: 76px;
 }
 .btn {
-  position: absolute;
-  z-index: -1;
   display: block;
   padding: 12px 32px;
   right: 0;
@@ -194,14 +191,14 @@ a {
 }
 .cards {
   display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   width: 100%;
   column-gap: 25px;
   row-gap: 25px;
   margin-bottom: 30px;
 }
 .lot {
-  z-index: -1;
+  z-index: 0;
   position: relative;
   padding: 50px 40px;
   min-height: 450px;
@@ -214,7 +211,6 @@ a {
 }
 .lot a {
   display: block;
-  pointer-events: none;
   height: 100%;
   width: 100%;
 }
@@ -237,6 +233,7 @@ a {
 .lot p,
 h3 {
   display: block;
+  z-index: 2;
 }
 .lot__title {
   margin-bottom: 15px;
@@ -255,7 +252,6 @@ h3 {
   font-size: 20px;
   text-decoration: underline;
   text-underline-position: under;
-  pointer-events: none;
 }
 .about {
   max-width: 1440px;
@@ -275,6 +271,12 @@ h3 {
   height: 240px;
   border-radius: 50%;
   background-color: #000000;
+}
+.about__logo-container a {
+  display: block;
+  width: 141px;
+  height: 112px;
+  margin: auto auto;
 }
 .about__logo {
   display: block;
@@ -298,9 +300,10 @@ h3 {
 .footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  min-width: 1100px;
+  width: 100%;
+  max-width: 1440px;
   padding: 0 50px;
-  margin: 0 0 90px;
+  margin: 0 auto 90px;
 }
 
 .footer__link-list {
@@ -317,16 +320,12 @@ h3 {
   justify-self: start;
   align-self: flex-start;
 }
-.footer__logo {
-  width: 240px;
-  height: 240px;
-}
+
 .footer__menu {
   align-self: flex-start;
 }
 .footer__menu a {
   display: block;
-  pointer-events: none;
   text-decoration: none;
 }
 .footer__menu ul {
@@ -346,7 +345,7 @@ h3 {
   display: flex;
   justify-self: end;
 }
-.socials a {
+.socials li {
   display: block;
   width: 48px;
   height: 48px;
@@ -355,19 +354,16 @@ h3 {
   border: 1px solid #000000;
 }
 .socials a {
-  pointer-events: none;
+  display: block;
 }
 .socials img {
   display: block;
   margin: auto auto;
 }
-.socials a:last-child {
+.socials li:last-child {
   margin-right: 0;
 }
-
-@media (max-width: 1400px) {
-  .show-more p {
-    text-align-last: left;
-    font-size: 20px;
-  }
+.socials ul,
+.socials li {
+  list-style: none;
 }
